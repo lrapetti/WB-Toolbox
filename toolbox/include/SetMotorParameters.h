@@ -7,8 +7,8 @@
  * GNU Lesser General Public License v2.1 or any later version.
  */
 
-#ifndef WBT_SETLOWLEVELPID_H
-#define WBT_SETLOWLEVELPID_H
+#ifndef WBT_SETMOTORPARAMETERS_H
+#define WBT_SETMOTORPARAMETERS_H
 
 #include "WBBlock.h"
 
@@ -17,11 +17,11 @@
 
 namespace wbt {
     class BlockInformation;
-    class SetLowLevelPID;
+    class SetMotorParameters;
 } // namespace wbt
 
 /**
- * @brief The wbt::SetLowLevelPID class
+ * @brief The wbt::SetMotorParameters class
  *
  * @section Parameters
  *
@@ -34,8 +34,10 @@ namespace wbt {
  * | ::STRUCT_CELL_DOUBLE | 0 + WBBlock::NumberOfParameters | 1 | 1 | "D"           |
  * | ::STRING             | 1 + WBBlock::NumberOfParameters | 1 | 1 | "ControlType" |
  *
+ * TODO
+ *
  */
-class wbt::SetLowLevelPID final : public wbt::WBBlock
+class wbt::SetMotorParameters final : public wbt::WBBlock
 {
 private:
     class impl;
@@ -44,8 +46,8 @@ private:
 public:
     static const std::string ClassName;
 
-    SetLowLevelPID();
-    ~SetLowLevelPID() override = default;
+    SetMotorParameters();
+    ~SetMotorParameters() override = default;
 
     unsigned numberOfParameters() override;
     bool configureSizeAndPorts(BlockInformation* blockInfo) override;
@@ -55,4 +57,4 @@ public:
     bool output(const BlockInformation* blockInfo) override;
 };
 
-#endif // WBT_SETLOWLEVELPID_H
+#endif // WBT_SETMOTORPARAMETERS_H
